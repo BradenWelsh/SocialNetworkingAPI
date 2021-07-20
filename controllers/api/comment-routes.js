@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Comment } = require("../../models");
 const wAuth = require("../../utils/auth");
 
-router.get("/", (req, res) => {
+router.get("/", (res) => {
   Comment.findAll({})
     .then((dbCData) => res.json(dbCData))
     .catch((err) => {
